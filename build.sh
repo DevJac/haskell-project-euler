@@ -40,6 +40,8 @@ done
 
 rm -r dist
 rm -r solutions
+rm src/*.hi
+rm src/*.o
 cabal configure
 cabal build
 mkdir solutions
