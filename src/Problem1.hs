@@ -7,4 +7,4 @@ main = print $ sum [x | x <- [1..1000-1],
 
 
 divisibleBy :: Integral n => n -> n -> Bool
-n `divisibleBy` d = n `mod` d == 0
+n `divisibleBy` d = n `rem` d == 0

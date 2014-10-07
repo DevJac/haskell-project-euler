@@ -20,7 +20,7 @@ cabal-version:       >=1.10
 
 EOF
 
-for source_file in `find src -name "Problem*.hs"`; do
+for source_file in `find src -maxdepth 1 -type f -name "Problem*.hs"`; do
 a=${source_file#src/}
 b=${a%.hs}
 
@@ -40,13 +40,12 @@ done
 
 rm -r dist
 rm -r solutions
-rm src/*.hi
-rm src/*.o
+find src -maxdepth 1 -type f ! -name "*.hs" -exec rm {} \;
 cabal configure
 cabal build
 mkdir solutions
 
-for source_file in `find src -name "Problem*.hs"`; do
+for source_file in `find src -maxdepth 1 -type f -name "Problem*.hs"`; do
 a=${source_file#src/}
 b=${a%.hs}
 
