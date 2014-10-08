@@ -2,7 +2,7 @@ module Problem1 where
 
 
 main :: IO ()
-main = print $ sum [x | x <- [1..1000-1],
+main = print . sum $ [x | x <- [1..1000-1],
                         x `divisibleBy` 3 || x `divisibleBy` 5]
 
 

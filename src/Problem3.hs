@@ -5,7 +5,7 @@ import Problem1 (divisibleBy)
 
 
 main :: IO ()
-main = print $ maximum $ primeFactors 600851475143
+main = print . maximum . primeFactors $ 600851475143
 
 
 primeFactors :: Integral n => n -> [n]
@@ -14,11 +14,12 @@ primeFactors n = let p = leastPrimeFactor n in p : primeFactors (n `div` p)
 
 
 leastPrimeFactor :: Integral n => n -> n
-leastPrimeFactor n = maybe n id $ find (\p -> n `divisibleBy` p) (possiblePrimeFactors n)
+leastPrimeFactor n = maybe n id $
+                     find (\p -> n `divisibleBy` p) (possiblePrimeFactors n)
 
 
 isPrime :: Integral n => n -> Bool
-isPrime n = all (\p -> not $ n `divisibleBy` p) (possiblePrimeFactors n)
+isPrime n = all (\p -> not $ n `divisibleBy` p) $ possiblePrimeFactors n
 
 
 primes :: Integral n => [n]
