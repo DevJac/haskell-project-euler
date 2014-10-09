@@ -2,3 +2,4 @@ dist
 .cabal-sandbox
 solutions
 project-euler.cabal
+data

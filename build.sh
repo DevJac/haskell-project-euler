@@ -30,7 +30,8 @@ executable $b
     -- other-modules:
     -- other-extensions:
     build-depends:
-        base >=4.7 && <4.8
+        base >=4.7 && <4.8,
+        regex-tdfa
     hs-source-dirs:      src
     default-language:    Haskell2010
     ghc-options:         -main-is $b
