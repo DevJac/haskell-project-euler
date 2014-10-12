@@ -31,7 +31,8 @@ executable $b
     -- other-extensions:
     build-depends:
         base >=4.7 && <4.8,
-        regex-tdfa
+        regex-tdfa,
+        data-ordlist
     hs-source-dirs:      src
     default-language:    Haskell2010
     ghc-options:         -main-is $b
@@ -46,6 +47,7 @@ find src -maxdepth 1 -type f ! -name "*.hs" -exec rm {} \;
 cabal configure
 cabal build
 mkdir solutions
+ln -s ../src/data solutions/data
 
 for source_file in `find src -maxdepth 1 -type f -name "Problem*.hs"`; do
 a=${source_file#src/}
