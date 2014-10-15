@@ -32,7 +32,8 @@ executable $b
     build-depends:
         base >=4.7 && <4.8,
         regex-tdfa,
-        data-ordlist
+        data-ordlist,
+        raw-strings-qq
     hs-source-dirs:      src
     default-language:    Haskell2010
     ghc-options:         -main-is $b
