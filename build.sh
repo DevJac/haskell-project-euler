@@ -33,7 +33,8 @@ executable $b
         base >=4.7 && <4.8,
         regex-tdfa,
         data-ordlist,
-        raw-strings-qq
+        raw-strings-qq,
+        array
     hs-source-dirs:      src
     default-language:    Haskell2010
     ghc-options:         -main-is $b
@@ -42,7 +43,6 @@ EOF
 
 done
 
-rm -r dist
 rm -r solutions
 find src -maxdepth 1 -type f ! -name "*.hs" -exec rm {} \;
 cabal configure
