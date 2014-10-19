@@ -6,7 +6,7 @@ import Text.RawString.QQ (r)
 import Problem8 (atLeast)
 
 
-main = print $ pathScores triangle ! (0, 0)
+main = print $ pathScores (triangle rawTriangle) ! (0, 0)
 
 
 strToInts :: (Read n, Integral n) => String -> [n]
@@ -24,8 +24,8 @@ pathScores t = a where
                                       max (a ! (x,y+1)) (a ! (x+1,y+1))
 
 
-triangle :: [[Int]]
-triangle = dropWhile (not . atLeast 1) $ map strToInts $ lines rawTriangle
+triangle :: String -> [[Int]]
+triangle = dropWhile (not . atLeast 1) . map strToInts . lines
 
 
 rawTriangle :: String
