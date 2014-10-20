@@ -34,7 +34,8 @@ executable $b
         regex-tdfa,
         data-ordlist,
         raw-strings-qq,
-        array
+        array,
+        containers
     hs-source-dirs:      src
     default-language:    Haskell2010
     ghc-options:         -main-is $b

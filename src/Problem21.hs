@@ -6,10 +6,10 @@ main = do print $ sum $ filter amicable [2..9999]
 
 
 amicable :: Int -> Bool
-amicable n = let a = (sum . lowerDivisors) n
-                 b = (sum . lowerDivisors) a
+amicable n = let a = (sum . properDivisors) n
+                 b = (sum . properDivisors) a
              in a /= b && b == n
 
 
-lowerDivisors :: Int -> [Int]
-lowerDivisors n = filter (/= n) $ divisors n
+properDivisors :: Int -> [Int]
+properDivisors n = filter (/= n) $ divisors n
