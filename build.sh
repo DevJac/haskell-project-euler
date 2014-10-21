@@ -35,7 +35,8 @@ executable $b
         data-ordlist,
         raw-strings-qq,
         array,
-        containers
+        containers,
+        time
     hs-source-dirs:      src
     default-language:    Haskell2010
     ghc-options:         -main-is $b
